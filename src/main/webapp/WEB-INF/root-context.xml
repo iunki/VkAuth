@@ -10,5 +10,6 @@
     <context:component-scan base-package="ru.kpfu.itis.repository"/>
 
     <import resource="persistence-config.xml"/>
+    <import resource="security-config.xml"/>
 
 </beans>

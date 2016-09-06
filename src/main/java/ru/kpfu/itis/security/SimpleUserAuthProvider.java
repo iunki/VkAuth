@@ -22,7 +22,7 @@ public class SimpleUserAuthProvider implements AuthenticationProvider {
     @Autowired
     SimpleAuthUserRepository userRepository;
 
-    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+    /*BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();*/
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -34,7 +34,8 @@ public class SimpleUserAuthProvider implements AuthenticationProvider {
         }
 
         String password = authentication.getCredentials().toString();
-        if (!encoder.matches(password, user.getPassword())) {
+        System.out.println(password+"        " +user.getPassword());
+        if (!password.equals(user.getPassword())) {
             throw new BadCredentialsException("invalid password");
         }
 

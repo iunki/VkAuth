@@ -5,7 +5,7 @@
     <title>Document</title>
 </head>
 <body>
-<#--<form action="/login/process" method="post">
+<form action="/login/process" method="post">
     <div class="form-group">
         <label for="exampleInputEmail1">Логин</label>
         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Логин" name="username">
@@ -17,7 +17,9 @@
 <#if error??>
     <p>Неправильный логин или пароль</p>
 </#if>
-    <button type="submit" class="btn btn-default">Submit</button>
-</form>-->
+    <button type="submit" class="btn btn-default">Войти</button>
+</form>
+
+
 </body>
 </html>
