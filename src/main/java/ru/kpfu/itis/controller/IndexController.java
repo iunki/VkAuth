@@ -2,8 +2,10 @@ package ru.kpfu.itis.controller;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,7 +31,6 @@ public class IndexController {
     public final String CLIENT_ID = "5609595";
     public final String CLIENT_SECRET = "udqVuvIQ4o5lTREe1XpJ";
     public final String REDIRECT_URI = "http://localhost:8080/success";
-    public final String accessCode = "udqVuvIQ4o5lTREe1XpJ";
     public final String ACCESS_TOKEN_URL = "https://oauth.vk.com/access_token";
     public final String API_URL = "https://api.vk.com/method/users.get";
 
@@ -39,8 +40,8 @@ public class IndexController {
     @Autowired
     SimpleAuthUserService simpleAuthUserService;
 
-    /*@Autowired
-    private AuthenticationManager authenticationManager;*/
+    @Resource(name = "authenticationManager")
+    private AuthenticationManager authenticationManager;
 
     @RequestMapping(value = "/")
     public String getIndexPage() {

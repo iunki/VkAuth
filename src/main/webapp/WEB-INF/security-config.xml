@@ -13,7 +13,7 @@
 
     <security:authentication-manager alias="authenticationManager">
         <security:authentication-provider ref="authProvider"/>
-        <security:authentication-provider ref="vkAuthProvider"/>
+        <!--<security:authentication-provider ref="vkAuthProvider"/>-->
     </security:authentication-manager>
 
     <bean id="authProvider" class="ru.kpfu.itis.security.SimpleUserAuthProvider"/>
