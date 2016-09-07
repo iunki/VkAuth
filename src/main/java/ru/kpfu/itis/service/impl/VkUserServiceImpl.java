@@ -2,9 +2,9 @@ package ru.kpfu.itis.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.kpfu.itis.model.VKAuthUser;
+import ru.kpfu.itis.model.VkAuthUser;
 import ru.kpfu.itis.model.enums.AuthorityType;
-import ru.kpfu.itis.repository.VKAuthUserRepository;
+import ru.kpfu.itis.repository.VkAuthUserRepository;
 import ru.kpfu.itis.service.VkUserService;
 
 /**
@@ -14,16 +14,22 @@ import ru.kpfu.itis.service.VkUserService;
 public class VkUserServiceImpl implements VkUserService {
 
     @Autowired
-    VKAuthUserRepository vkRepository;
+    VkAuthUserRepository vkRepository;
 
     @Override
-    public void saveNewUser(String accessToken, String uid, String firstName, String lastName) {
-        VKAuthUser user = new VKAuthUser();
+    public void saveNewUser(String accessToken, String uid, String firstName, String lastName, String photo) {
+        VkAuthUser user = new VkAuthUser();
         user.setAccessToken(accessToken);
         user.setUsername(uid);
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setType(AuthorityType.VK);
+        user.setPhoto(photo);
         vkRepository.save(user);
+    }
+
+    @Override
+    public void updateUserInfo(String id, String accessToken, String firstName, String lastName, String photo) {
+
     }
 }

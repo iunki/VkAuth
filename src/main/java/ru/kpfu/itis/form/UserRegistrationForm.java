@@ -1,6 +1,5 @@
 package ru.kpfu.itis.form;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Size;
@@ -19,7 +18,7 @@ public class UserRegistrationForm {
     @NotEmpty(message = "Фамилия не может быть пустым")
     private String LastName;
 
-    /*@Size(min = 6, max = 24, message = "Пароль неверной длины")*/
+    @Size(min = 4, max = 24, message = "Пароль неверной длины")
     private String password;
 
     public String getUsername() {

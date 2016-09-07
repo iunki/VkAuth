@@ -5,5 +5,8 @@ package ru.kpfu.itis.service;
  */
 public interface VkUserService {
 
-    public void saveNewUser(String accessToken, String uid, String firstName, String lastName);
+    void saveNewUser(String accessToken, String uid, String firstName, String lastName, String photo);
+
+    void updateUserInfo(String id, String accessToken, String firstName, String lastName, String photo);
+
 }

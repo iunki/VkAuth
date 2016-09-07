@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  */
 
 @Service
-public class AuthenticationServiceImpl implements AuthenticationService{
+public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Resource(name = "authenticationManager")
     private AuthenticationManager authenticationManager;
@@ -26,8 +26,7 @@ public class AuthenticationServiceImpl implements AuthenticationService{
                 SecurityContextHolder.getContext().setAuthentication(authenticate);
                 return true;
             }
-        }
-        catch (AuthenticationException e) {
+        } catch (AuthenticationException e) {
             e.printStackTrace();
         }
         return false;

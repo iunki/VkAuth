@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "auth_user")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class AuthUser implements Serializable{
+public class AuthUser implements Serializable {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
@@ -22,7 +22,7 @@ public class AuthUser implements Serializable{
     private String id;
 
     //для вк это id, для обычной - логин
-    @ Column(name = "username", length = 64, nullable = false)
+    @Column(name = "username", length = 64, nullable = false)
     private String username;
 
     @Column(name = "first_name")
@@ -31,10 +31,9 @@ public class AuthUser implements Serializable{
     @Column(name = "last_name")
     private String lastName;
 
-    @ Enumerated(EnumType.STRING)
-    @ Column(name = "type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false)
     private AuthorityType type;
-
 
 
     public String getId() {
