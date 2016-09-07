@@ -34,6 +34,7 @@ public class SimpleUserAuthProvider implements AuthenticationProvider {
         }
 
         String password = authentication.getCredentials().toString();
+
         if (!encoder.matches(password, user.getPassword())) {
             throw new BadCredentialsException("invalid password");
         }

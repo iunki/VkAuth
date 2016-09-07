@@ -11,7 +11,7 @@
 
     <mvc:annotation-driven/>
 
-    <mvc:resources mapping="/resources/**" location="/resources"/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/WEB-INF/templates"/>

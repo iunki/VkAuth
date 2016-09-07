@@ -5,7 +5,7 @@ import ru.kpfu.itis.form.UserRegistrationForm;
 /**
  * Created by Юлия on 05.09.2016.
  */
-public interface SimpleAuthUserService {
+public interface SimpleUserService {
 
     void saveNewUser(UserRegistrationForm form);
 }

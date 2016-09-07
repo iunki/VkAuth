@@ -3,7 +3,7 @@ package ru.kpfu.itis.security;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import ru.kpfu.itis.model.VKAuthUser;
+import ru.kpfu.itis.model.VkAuthUser;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,11 +16,11 @@ public class VkTokenAuthentication implements Authentication {
 
     private String name;
     private Object details;
-    private VKAuthUser user;
+    private VkAuthUser user;
     private boolean authenticated;
-    private List <GrantedAuthority> authorities;
+    private List<GrantedAuthority> authorities;
 
-    public VkTokenAuthentication(VKAuthUser user, Object details){
+    public VkTokenAuthentication(VkAuthUser user, Object details) {
         this.name = user.getUsername();
         this.details = details;
         this.user = user;

@@ -10,14 +10,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "vk_auth_user")
-public class VKAuthUser extends AuthUser {
+public class VkAuthUser extends AuthUser {
 
     @Column(name = "access_token")
     private String accessToken;
 
-    /*@Column(name = "code")
-    private String code;*/
-
+    @Column(name = "photo")
+    private String photo;
 
     public String getAccessToken() {
         return accessToken;
@@ -27,11 +26,11 @@ public class VKAuthUser extends AuthUser {
         this.accessToken = accessToken;
     }
 
-    /*public String getCode() {
-        return code;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }*/
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 }

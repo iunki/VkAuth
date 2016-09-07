@@ -4,6 +4,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class Utils {
         for (int i = 0; i < names.length; i++) {
             url += names[i] + "=" + values[i] + "&";
         }
-        url = url.substring(0, url.length()-1);
+        url = url.substring(0, url.length() - 1);
 
         try {
             HttpClient client = new DefaultHttpClient();
