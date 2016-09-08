@@ -30,6 +30,6 @@ public class VkUserServiceImpl implements VkUserService {
 
     @Override
     public void updateUserInfo(String id, String accessToken, String firstName, String lastName, String photo) {
-
+        vkRepository.updateUserInfoById(id, accessToken, firstName, lastName, photo);
     }
 }
