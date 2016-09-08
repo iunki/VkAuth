@@ -62,6 +62,7 @@ public class VkUserController {
 
         if (user == null) { //saving in DB
             vkService.saveNewUser(accessToken, uid, jsonUserInfo.getString("first_name"), jsonUserInfo.getString("last_name"), photo);
+            user = vkRepository.findOneByUsernameAndType(uid, AuthorityType.VK);
         } else {            //update info in DB
             vkService.updateUserInfo(user.getId(), accessToken, jsonUserInfo.getString("first_name"), jsonUserInfo.getString("last_name"), photo);
         }
